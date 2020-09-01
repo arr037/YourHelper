@@ -1,0 +1,19 @@
+﻿body {
+    margin:0 auto;
+    padding:0;
+}
+
+*,*:before,*:after{
+    box-sizing:border-box;
+}
+
+
+.container {
+    width:100%;
+    max-width:1200px;
+    padding:0 15px;
+}
+
+@import "blocks/_utils.scss";
+@import "blocks/_sign.scss";
+@import "blocks/_button.scss";

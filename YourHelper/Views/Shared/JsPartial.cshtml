@@ -1,0 +1,21 @@
+﻿<script>
+    let inputs = document.querySelectorAll(".input-text");
+
+    for (let i=0;i<inputs.length; i++) {
+        //checkVal(inputs[i]);
+
+        inputs[i].addEventListener("blur",
+            function() {
+                checkVal(inputs[i]);
+            });
+    }
+
+    function checkVal(param) {
+        if (param.value.trim()!=="") {
+            param.classList.add("has-val");
+        }
+        else {
+            param.classList.remove("has-val");
+        }
+    }
+</script>

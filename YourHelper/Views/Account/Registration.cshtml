@@ -1,0 +1,44 @@
+﻿@model YourHelper.ViewModels.RegisterViewModel
+
+<div class="limiter">
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="login-form" method="post" asp-action="Registration">
+                <div class="login-form-title">
+                    Регистрация
+                </div>
+
+                <div class="wrap-input">
+                    <input class="input-text" asp-for="UserName">
+                    <label class="focus-input" asp-for="UserName"></label>
+                </div>
+                <div class="wrap-input">
+                    <input class="input-text" asp-for="Email">
+                    <label class="focus-input" asp-for="Email"></label>
+                </div>
+
+                <div class="wrap-input">
+                    <input class="input-text" asp-for="Password">
+                    <label class="focus-input" asp-for="Password"></label>
+                </div>
+
+                 <div class="wrap-input">
+                    <input class="input-text" asp-for="PasswordConfirm">
+                    <label class="focus-input" asp-for="PasswordConfirm"></label>
+                </div>
+
+                <div class="wrap-buttons">
+                    <input class="btn btn-gradient w100 mt-10" type="submit" value="Регистрация" />
+                </div>
+
+            </form>
+
+            <div class="wrap-url">
+                У вас есть аккаунт?
+                <a asp-action="Login">
+                    Войти
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

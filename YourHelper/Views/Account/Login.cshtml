@@ -1,0 +1,43 @@
+﻿@model YourHelper.ViewModels.LoginViewModel
+
+<div class="limiter">
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="login-form" method="post" asp-action="Login">
+
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="login-form-title">
+                    Авторизация
+                </div>
+
+                <div class="wrap-input">
+                    <input class="input-text" asp-for="UserName">
+                    <label class="focus-input" asp-for="UserName"></label>
+                </div>
+
+                <div class="wrap-input">
+                    <input class="input-text" asp-for="Password">
+                    <label class="focus-input" asp-for="Password"></label>
+                </div>
+
+                <div class="wrap-check">
+                    <input asp-for="RememberMe">
+                    <label asp-for="RememberMe"></label>
+                </div>
+
+                <div class="wrap-buttons">
+                    <input class="btn btn-gradient w100 mt-10" type="submit" value="Логин" />
+                </div>
+
+            </form>
+
+            <div class="wrap-url">
+                У вас нет аккаунта? 
+                <a asp-action="Registration">
+                    Регистрация
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
