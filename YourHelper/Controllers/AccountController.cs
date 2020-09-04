@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using YourHelper.Models;
@@ -9,6 +10,7 @@ using YourHelper.ViewModels;
 
 namespace YourHelper.Controllers
 {
+    
     public class AccountController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -19,19 +21,19 @@ namespace YourHelper.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
+        
         public IActionResult Login()
         {
             return View();
         }
-
+        
         public IActionResult Registration()
         {
             return View();
 
         }
 
-
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -57,7 +59,6 @@ namespace YourHelper.Controllers
             }
             return View(model);
         }
-
         [HttpPost]
         public async Task<IActionResult> Registration(RegisterViewModel model)
         {
@@ -79,6 +80,14 @@ namespace YourHelper.Controllers
                 }
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Login", "Account");
         }
 
     }

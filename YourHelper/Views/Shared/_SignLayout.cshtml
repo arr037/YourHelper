@@ -1,0 +1,13 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    @await Html.PartialAsync("MetaPartial")
+    @await Html.PartialAsync("CssPartial")
+</head>
+<body>
+    <div class="target">
+        @await Html.PartialAsync("LeftMenuPartial")
+        @RenderBody()
+    </div>
+</body>
+</html>

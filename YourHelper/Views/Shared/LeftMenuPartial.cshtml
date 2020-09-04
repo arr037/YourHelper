@@ -1,0 +1,19 @@
+﻿<div class="left-menu">
+    <div class="user">
+        <div class="user-info">
+            <div class="user__name">
+                @User.Identity.Name
+            </div>
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <input class="btn btn-gradient-link" type="submit" value="Выход" />
+            </form>
+        </div>
+    </div>
+    <div class="services">
+        <h3>Услуги:</h3>
+
+        <div class="service">
+            <a class="btn btn-link" asp-controller="Ticket" asp-action="Receipt">Квитанции</a>
+            </div>
+    </div>
+</div>
